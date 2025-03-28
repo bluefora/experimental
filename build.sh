@@ -57,10 +57,10 @@ dnf5 -y remove nvtop htop
 
 # Grab the modules
 git clone https://github.com/carbonux/onboarding /tmp/onboarding
-cp -r /tmp/onboarding/rootcopy/* /
+cp -rK /tmp/onboarding/rootcopy/* /
     # Add executable
     dnf5 -y install zenity
     cp `which zenity` /usr/lib/onboarding/onboardingWindow
 
 git clone https://github.com/carbonux/wallpaper-cycler /tmp/wallpaper-cycler
-cp -r /tmp/wallpaper-cycler/rootcopy/* /
+cp -rK /tmp/wallpaper-cycler/rootcopy/* /
