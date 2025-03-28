@@ -2,18 +2,11 @@
 
 set -ouex pipefail
 
-### Install packages
-
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-
 # Update release file
 sed -i -e 's/ID=silverblue/ID=expirimental/g' /usr/lib/os-release
-sed -i -e 's/Silverblue/Carbonux/g' /usr/lib/os-release
-sed -i -e 's/Fedora Linux 41 (Workstation Edition)/Carbonux Linux 41 (Expirimental Edition)/g' /usr/lib/os-release
-sed -i -e 's/DEFAULT_HOSTNAME="fedora"/DEFAULT_HOSTNAME="carbonux"/g' /usr/lib/os-release
+sed -i -e 's/Silverblue/Bluefora/g' /usr/lib/os-release
+sed -i -e 's/Fedora Linux 41 (Workstation Edition)/Bluefora Linux 41 (Expirimental Edition)/g' /usr/lib/os-release
+sed -i -e 's/DEFAULT_HOSTNAME="fedora"/DEFAULT_HOSTNAME="bluefora"/g' /usr/lib/os-release
 
 rpm-ostree ex rebuild
 

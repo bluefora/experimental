@@ -1,4 +1,4 @@
-export repo_organization := env("GITHUB_REPOSITORY_OWNER", "carbonux")
+export repo_organization := env("GITHUB_REPOSITORY_OWNER", "bluefora")
 export image_name := env("IMAGE_NAME", "expirimental")
 export centos_version := env("CENTOS_VERSION", "stream10")
 export fedora_version := env("CENTOS_VERSION", "41")
