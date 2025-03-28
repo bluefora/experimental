@@ -12,7 +12,7 @@ set -ouex pipefail
 # Update release file
 sed -i -e 's/ID=silverblue/ID=expirimental/g' /usr/lib/os-release
 sed -i -e 's/Silverblue/Carbonux/g' /usr/lib/os-release
-sed -i -e 's/Fedora Linux 41 (Expirimental Edition)/Carbonux Linux 41 (Workstation Edition)/g' /usr/lib/or-release
+sed -i -e 's/Fedora Linux 41 (Expirimental Edition)/Carbonux Linux 41 (Workstation Edition)/g' /usr/lib/os-release
 sed -i -e 's/DEFAULT_HOSTNAME="fedora"/DEFAULT_HOSTNAME="carbonux"/g' /usr/lib/os-release
 
 rpm-ostree ex rebuild
