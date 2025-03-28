@@ -12,7 +12,7 @@ set -ouex pipefail
 # Update release file
 sed -i -e 's/ID=silverblue/ID=expirimental/g' /usr/lib/os-release
 sed -i -e 's/Silverblue/Carbonux/g' /usr/lib/os-release
-sed -i -e 's/Fedora Linux 41 (Expirimental Edition)/Carbonux Linux 41 (Workstation Edition)/g' /usr/lib/os-release
+sed -i -e 's/Fedora Linux 41 (Workstation Edition)/Carbonux Linux 41 (Expirimental Edition)/g' /usr/lib/os-release
 sed -i -e 's/DEFAULT_HOSTNAME="fedora"/DEFAULT_HOSTNAME="carbonux"/g' /usr/lib/os-release
 
 rpm-ostree ex rebuild
@@ -57,10 +57,10 @@ dnf5 -y remove nvtop htop
 
 # Grab the modules
 git clone https://github.com/carbonux/onboarding /tmp/onboarding
-cp -rK /tmp/onboarding/rootcopy/* /
+rsync -av --keep-dirlinks /tmp/onboarding/rootcopy/* /
     # Add executable
     dnf5 -y install zenity
     cp `which zenity` /usr/lib/onboarding/onboardingWindow
 
 git clone https://github.com/carbonux/wallpaper-cycler /tmp/wallpaper-cycler
-cp -rK /tmp/wallpaper-cycler/rootcopy/* /
+rsync -av --keep-dirlinks /tmp/wallpaper-cycler/rootcopy/* /
