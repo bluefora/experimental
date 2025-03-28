@@ -57,3 +57,7 @@ cp `which zenity` /usr/lib/onboarding/onboardingWindow
 # Cleanup unused packages
 dnf5 -y remove nvtop htop
 
+
+# Grab the submodules
+git clone https://github.com/carbonux/onboarding /tmp/onboarding
+cp -r /tmp/onboarding/rootcopy/* /
