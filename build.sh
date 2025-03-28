@@ -34,7 +34,7 @@ dnf5 -y install gnome-shell-extension-appindicator \
               gnome-shell-extension-just-perfection \
               gnome-shell-extension-pop-shell
 
-# Dconf stuff
+# Disable welcome screen
 cat > /etc/dconf/db/local.d/00-disable-gnome-tour <<EOF
 [org/gnome/shell]
 welcome-dialog-last-shown-version='$(rpm -qv gnome-shell | cut -d- -f3)'
@@ -55,9 +55,12 @@ flatpak remote-modify --no-filter --enable flathub
 dnf5 -y remove nvtop htop
 
 
-# Grab the submodules
+# Grab the modules
 git clone https://github.com/carbonux/onboarding /tmp/onboarding
 cp -r /tmp/onboarding/rootcopy/* /
+    # Add executable
+    dnf5 -y install zenity
+    cp `which zenity` /usr/lib/onboarding/onboardingWindow
 
-dnf5 -y install zenity
-cp `which zenity` /usr/lib/onboarding/onboardingWindow
+git clone https://github.com/carbonux/wallpaper-cycler /tmp/wallpaper-cycler
+cp -r /tmp/wallpaper-cycler/rootcopy/* /
