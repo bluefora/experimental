@@ -1,0 +1,6 @@
+[submodule "onboarding"]
+	path = onboarding
+	url = https://github.com/carbonux/onboarding.git
+[submodule "wallpaper-cycler"]
+	path = wallpaper-cycler
+	url = https://github.com/carbonux/wallpaper-cycler.git
