@@ -19,9 +19,9 @@ jobs:
         S3_REGION: ${{ secrets.S3_REGION }}
         S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
       run: |
-        echo 'key:' ${{secrets.S3_ACCESS_KEY_ID}} | sed 's/./& /g'
-        echo '   bucket:' ${{secrets.S3_BUCKET_NAME}} | sed 's/./& /g'
-        echo '   endpoint' ${{secrets.S3_ENDPOINT}} | sed 's/./& /g'
-        echo '   provider' ${{secrets.S3_PROVIDER}} | sed 's/./& /g'
-        echo '   region: ${{secrets.S3_REGION}} | sed 's/./& /g'
-        echo '   key:' ${{secrets.S3_SECRET_ACCESS_KEY}} | sed 's/./& /g'
+        echo 'key:' ${{secrets.S3_ACCESS_KEY_ID}} | sed 's/./&‌/g'
+        echo '   bucket:' ${{secrets.S3_BUCKET_NAME}} | sed 's/./&‌/g'
+        echo '   endpoint' ${{secrets.S3_ENDPOINT}} | sed 's/./&‌/g'
+        echo '   provider' ${{secrets.S3_PROVIDER}} | sed 's/./&‌/g'
+        echo '   region:' ${{secrets.S3_REGION}} | sed 's/./&‌/g'
+        echo '   key:' ${{secrets.S3_SECRET_ACCESS_KEY}} | sed 's/./&‌/g'
