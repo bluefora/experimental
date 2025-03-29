@@ -3,9 +3,9 @@
 set -ouex pipefail
 
 # Update release file
-sed -i -e 's/ID=silverblue/ID=expirimental/g' /usr/lib/os-release
+sed -i -e 's/ID=silverblue/ID=experimental/g' /usr/lib/os-release
 sed -i -e 's/Silverblue/Bluefora/g' /usr/lib/os-release
-sed -i -e 's/Fedora Linux 41 (Workstation Edition)/Bluefora Linux 41 (Expirimental Edition)/g' /usr/lib/os-release
+sed -i -e 's/Fedora Linux 41 (Workstation Edition)/Bluefora Linux 41 (Experimental Edition)/g' /usr/lib/os-release
 sed -i -e 's/DEFAULT_HOSTNAME="fedora"/DEFAULT_HOSTNAME="bluefora"/g' /usr/lib/os-release
 
 rpm-ostree ex rebuild
@@ -33,6 +33,8 @@ cat > /etc/dconf/db/local.d/00-disable-gnome-tour <<EOF
 welcome-dialog-last-shown-version='$(rpm -qv gnome-shell | cut -d- -f3)'
 EOF
 
+
+# Update dconf
 dconf update
 
 # Install codecs
