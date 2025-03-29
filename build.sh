@@ -16,8 +16,8 @@ dnf5 -y remove \
     firefox-langpacks \
     f41-backgrounds-gnome \
     desktop-backgrounds-gnome \
-    #gnome-backgrounds \
     gnome-backgrounds-extras
+    #gnome-backgrounds
 
 
 # Set timezone
