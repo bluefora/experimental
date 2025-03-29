@@ -13,7 +13,11 @@ rpm-ostree ex rebuild
 # Cleanup
 dnf5 -y remove \
     firefox \
-    firefox-langpacks
+    firefox-langpacks \
+    f41-backgrounds-gnome \
+    desktop-backgrounds-gnome \
+    #gnome-backgrounds \
+    gnome-backgrounds-extras
 
 
 # Set timezone
