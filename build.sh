@@ -17,7 +17,7 @@ dnf5 -y remove \
 
 
 # Set timezone
-timedatectl set-timezone Europe/Amsterdam
+ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 
 
 # Install Apps
