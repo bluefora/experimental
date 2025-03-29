@@ -16,6 +16,10 @@ dnf5 -y remove \
     firefox-langpacks
 
 
+# Set timezone
+timedatectl set-timezone Europe/Amsterdam
+
+
 # Install Apps
 dnf5 -y install gnome-tweaks gnome-extensions-app
 
