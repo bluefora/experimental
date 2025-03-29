@@ -43,11 +43,11 @@ EOF
 
 
 # Grab the modules
-git clone https://github.com/carbonux/onboarding /tmp/onboarding
-rsync -av --keep-dirlinks /tmp/onboarding/rootcopy/* /
+git clone https://github.com/carbonux/quicksetup /tmp/quicksetup
+rsync -av --keep-dirlinks /tmp/quicksetup/rootcopy/* /
     # Add executable
     dnf5 -y install zenity
-    cp `which zenity` /usr/lib/onboarding/onboardingWindow
+    cp `which zenity` /usr/lib/quicksetup/quicksetupWindow
 
 git clone https://github.com/carbonux/wallpaper-cycler /tmp/wallpaper-cycler
 rsync -av --keep-dirlinks /tmp/wallpaper-cycler/rootcopy/* /
