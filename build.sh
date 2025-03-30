@@ -22,6 +22,7 @@ dnf5 -y remove \
 # Just in case
 rm -r /usr/share/backgrounds/f4*
 rm -r /usr/share/backgrounds/gnome
+rm -r /usr/share/backgrounds/fedora-*
 
 # Set timezone
 ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
@@ -51,6 +52,9 @@ rsync -av --keep-dirlinks /tmp/quicksetup/rootcopy/* /
     # Add executable
     dnf5 -y install zenity
     cp `which zenity` /usr/lib/quicksetup/quicksetupWindow
+
+git clone https://github.com/bluefora/wallpapers /tmp/wallpapers
+rsync -av --keep-dirlinks /tmp/wallpapers/rootcopy/* /
 
 git clone https://github.com/bluefora/wallpaper-cycler /tmp/wallpaper-cycler
 rsync -av --keep-dirlinks /tmp/wallpaper-cycler/rootcopy/* /
