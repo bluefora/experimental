@@ -47,17 +47,16 @@ EOF
 
 
 # Grab the modules
-git clone https://github.com/bluefora/quicksetup /tmp/quicksetup
-rsync -av --keep-dirlinks /tmp/quicksetup/rootcopy/* /
-    # Add executable
-    dnf5 -y install zenity
-    cp `which zenity` /usr/lib/quicksetup/quicksetupWindow
-
-git clone https://github.com/bluefora/wallpapers /tmp/wallpapers
-rsync -av --keep-dirlinks /tmp/wallpapers/rootcopy/* /
-
-git clone https://github.com/bluefora/wallpaper-cycler /tmp/wallpaper-cycler
-rsync -av --keep-dirlinks /tmp/wallpaper-cycler/rootcopy/* /
+typeset modules=(quicksetup wallpapers wallpaper-cycler)
+for module in "${modules[@]}"; do
+    git clone https://github.com/bluefora/${module} /tmp/${module}
+    rsync -av --keep-dirlinks /tmp/${module}/rootcopy/* /
+    if [[ -f /tmp/${module}/build.sh ]]; then
+        cd /tmp/${module}
+        bash ./build.sh
+        cd -
+    fi
+done
 
 
 # Update dconf
