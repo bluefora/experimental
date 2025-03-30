@@ -19,10 +19,10 @@ dnf5 -y remove \
     gnome-backgrounds-extras \
     gnome-backgrounds
 
-# Just in case
-rm -r /usr/share/backgrounds/f4*
-rm -r /usr/share/backgrounds/gnome
-rm -r /usr/share/backgrounds/fedora-*
+files=(flight futurecity glasscurtains mermaid montclair petals)
+for file in "${files[@]}"; do
+    rm $file
+done
 
 # Set timezone
 ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
