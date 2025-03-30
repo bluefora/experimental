@@ -21,7 +21,7 @@ dnf5 -y remove \
 
 files=(flight futurecity glasscurtains mermaid montclair petals)
 for file in "${files[@]}"; do
-    rm $file
+    rm /usr/share/gnome-background-properties/${file}.xml
 done
 
 # Set timezone
