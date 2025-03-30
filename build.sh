@@ -16,9 +16,12 @@ dnf5 -y remove \
     firefox-langpacks \
     f41-backgrounds-gnome \
     desktop-backgrounds-gnome \
-    gnome-backgrounds-extras
-    #gnome-backgrounds
+    gnome-backgrounds-extras \
+    gnome-backgrounds
 
+# Just in case
+rm -r /usr/share/backgrounds/f4*
+rm -r /usr/share/backgrounds/gnome
 
 # Set timezone
 ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
