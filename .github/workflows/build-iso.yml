@@ -7,7 +7,7 @@ on:
       upload-to-s3:
         description: "Upload to S3"
         required: false
-        default: true
+        default: false
         type: boolean
       platform:
         required: true
@@ -100,4 +100,4 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y rclone
-          rclone copy $SOURCE_DIR S3:${{ secrets.S3_BUCKET_NAME }}
+          rclone -vv copy $SOURCE_DIR S3:${{ secrets.S3_BUCKET_NAME }}
